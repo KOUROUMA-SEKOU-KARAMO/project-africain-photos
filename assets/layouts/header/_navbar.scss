@@ -1,0 +1,77 @@
+.container-navbar{
+    background: $colorBlack2;
+    width: 100%;
+     @include flexSpaceChildren(space-between);
+    align-items: center;
+    padding:10px;
+
+    
+    li{
+         
+            padding:10px;
+        a{
+            color: $colorBlack3;
+            font-size: 14px;
+            &:hover{
+                 color: $colorWhite;
+            }
+        }
+    }
+        // ****** style left 
+
+    .left{
+        margin: 0  20px 0 0;
+        display: flex;
+
+ 
+        
+    >li ul{
+        display: none;
+    }
+
+        li{
+
+            a{ 
+                text-transform: capitalize;
+                 @include centerChild;
+
+                .fa-solid{
+                    display: inline-block;
+                    margin: 0 0 0 4px  ;
+               }
+            }
+        }
+
+        .new{
+            a{
+             background: $colorSkyle;
+             padding: 1px 9px;
+             border-radius: 3px;    
+             color: $colorBlack2;
+            }
+
+          
+        }
+ 
+    }
+
+        // ****** style right 
+
+    .right{
+        display: flex;
+        .prix{
+            a{
+            color: $colorOrange;
+            }
+        }
+
+        .inscrire{
+           a{
+            border:1px solid $colorBlack3;
+            padding: 3px 15px;
+            border-radius: 5px ;
+           }
+        }
+
+    }
+}

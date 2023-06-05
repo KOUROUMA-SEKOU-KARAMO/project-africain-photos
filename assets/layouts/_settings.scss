@@ -1,0 +1,81 @@
+@font-face {
+     font-family: 'Nova';
+     src: url('../fonts/Fjalla_One/FjallaOne-Regular.ttf');
+}
+
+//   font du style 
+$fontNova:Nova,'sans-serif';
+
+// Variables colors 
+
+$colorBlack1:black;
+$colorBlack2:rgb(28,38,45);
+$colorBlack3:rgba(129, 163, 180, 0.965);
+$colorGray1: gray;
+$colorGray2: rgb(226,232,236);
+$colorWhite: white;
+$colorWhite2: rgba(218, 216, 216, 0.842);
+$colorWhite: white;
+$colorSkyle: #C7EDFF;
+$colorBlue:#0445BF;
+$colorOrange: #E09404;
+
+
+//     General style  
+*{
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+}
+
+body{
+     font-family: $fontNova;
+     min-height: 100vh;
+     min-width: 100vw;
+}
+
+header,main,footer{
+      width: 100%;
+}
+
+li{
+  
+     list-style-type: none;
+}
+
+a{
+     text-decoration: none;
+}
+
+
+
+// ***************** Style mixin *******
+
+@mixin title {
+      font-family: $fontNova;
+      font-size: 1.5rem;
+}
+
+@mixin centerChild{
+     display: flex;
+     align-items: center;
+     justify-content: center;
+}
+
+@mixin flexSpaceChildren($space){
+      display: flex;
+      justify-content: $space;
+      align-items: center;
+
+}
+
+ @mixin grid50{
+       display: grid;
+       grid-template-columns: repeat(2,50%);
+ }
+
+
+
+
+
+
