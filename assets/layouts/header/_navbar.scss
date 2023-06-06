@@ -1,9 +1,39 @@
 .container-navbar{
     background: $colorBlack2;
-    width: 100%;
-     @include flexSpaceChildren(space-between);
+    display: flex;
+    justify-content: space-between;
     align-items: center;
-    padding:10px;
+      
+    @media screen  and (max-width: 1008px ){
+       padding: 10px;
+    }
+    position: relative;
+   
+    .show-navbar{
+         color: $colorWhite;
+          font-size: 1.5rem;
+          
+          @media screen  and (min-width: 1008px ){
+              display: none;
+          }
+    }
+
+    .connexion{
+        display: flex;
+        @media screen  and (min-width: 1008px ){
+            display: none;
+          }
+          .inscrire{
+             
+                a{
+                    border:1px solid $colorBlack3;
+                    padding: 3px 15px;
+                    border-radius: 5px ;
+                }
+          }
+
+    }
+
 
     
     li{
@@ -20,38 +50,38 @@
         // ****** style left 
 
     .left{
-        margin: 0  20px 0 0;
-        display: flex;
+                margin: 0  20px 0 0;
+                display: flex;
+                
 
- 
-        
-    >li ul{
-        display: none;
-    }
-
-        li{
-
-            a{ 
-                text-transform: capitalize;
-                 @include centerChild;
-
-                .fa-solid{
-                    display: inline-block;
-                    margin: 0 0 0 4px  ;
-               }
-            }
-        }
-
-        .new{
-            a{
-             background: $colorSkyle;
-             padding: 1px 9px;
-             border-radius: 3px;    
-             color: $colorBlack2;
+                
+            >li ul{
+                display: none;
             }
 
-          
-        }
+                li{
+
+                    a{ 
+                        text-transform: capitalize;
+                        @include centerChild;
+
+                        .fa-solid{
+                            display: inline-block;
+                            margin: 0 0 0 4px  ;
+                    }
+                    }
+                }
+
+                .new{
+                    a{
+                    background: $colorSkyle;
+                    padding: 1px 9px;
+                    border-radius: 3px;    
+                    color: $colorBlack2;
+                    }
+
+                
+                }
  
     }
 
@@ -59,11 +89,19 @@
 
     .right{
         display: flex;
+       
         .prix{
+           
+                
             a{
             color: $colorOrange;
+            &:hover{
+                 color: $colorWhite;
+            }
             }
         }
+
+       
 
         .inscrire{
            a{
@@ -74,4 +112,52 @@
         }
 
     }
+
+
+        >div{
+            padding:10px;
+             @include flexSpaceChildren(space-between);
+           
+             @media screen and (min-width: 1008px){
+                  width: 100%;
+             }
+            @media screen  and (max-width: 1008px ){
+                background: $colorBlack2;
+                flex-direction: column;
+               align-items: center;
+             position : relative;
+                 display: block;
+                 position: absolute;
+                 top: 100% ;
+                 left: 0;
+                 padding:0;
+                 min-width: 250px;
+                
+                 .left, .right{
+                     display: block;
+                     width: 100%;
+                 
+                     li{
+                        //  width: 100%;
+                         display: flex;
+                         align-items: center;
+                         a{ 
+                            width: 100%; 
+                            display: flex;
+                            align-items: center;
+                            justify-content: space-between;
+                         }
+                     }
+
+                     .left{
+                         .btn-categorie{
+                             display: block;
+                             background: teal;
+                         }
+                     }
+                 }
+            }
+        }
+
+   
 }

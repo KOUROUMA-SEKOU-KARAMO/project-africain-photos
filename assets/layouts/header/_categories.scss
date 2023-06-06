@@ -1,21 +1,36 @@
-@mixin heightCategorie($height: 229px) {
-  height: $height;
-}
 
-$height: 230px;
-$color: "";
 .btn-categorie {
-  &:hover .categories {
-    display: block;
+
+  &:hover .categories{
+        display: block;
   }
-  position: relative;
+
+  @media screen  and (max-width: 1008px ){
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+ }
+ position: relative;
 
   .categories {
     position: absolute;
     top: 129%;
     width: 160px;
-    height: 225px;
+    height: 229px!important;
+    // height: 225px;
     display: none;
+
+    @media screen  and (max-width: 1008px ){
+      width: 100%;
+    
+      top: 120%;;
+   bottom: -30px;
+
+
+
+    }
+
+  
     &::before {
       content: "";
       width: 100%;
@@ -24,9 +39,9 @@ $color: "";
       position: absolute;
       background: $colorBlack2;
     }
-
+    border-radius: 0 0 0 7px ;
     background: $colorBlack2;
-    background: $color;
+  
     color: $colorWhite;
     font-weight: 600;
 
@@ -42,37 +57,46 @@ $color: "";
       }
     }
 
-    // .text1{
+    
 
-    //     // @include heightCategorie(200px)
-    //     &:hover{
-    //       // height: $height;
-    //       $color:orange!important;
-
-    //       .btn-categorie .categories{
-    //           background: red!important;
-    //       }
-
-    //     }
+  
+    // &:hover .designs {
+    //   display: grid;
     // }
-
-    &:hover .designs {
-      display: grid;
-    }
     .designs {
+
+      // @media screen and (max-width: 1008px){ 
+      //    display: none;
+      // }
+    
       &:hover .designs-submenu {
         display: grid;
       }
+      
       .designs-submenu {
         background: $colorBlack2;
-        display: grid;
-        grid-template-columns: repeat(4, 152px);
+        // display: none;
+        grid-template-columns: repeat(4,152px);
         position: absolute;
         left: 100%;
-        // top:-1px;
+        top:0;
         border-radius: 0 0 7px 0;
         border-left: 1px solid $colorGray1;
-        display: none;
+        // display: var(--showDesign);
+
+        @media screen and (max-width: 1008px){
+             grid-template-columns: 1fr ;
+            left: 0;
+            width: 100%;
+            padding: 0 10px 0  40px;
+            top: 40px;
+            display: none;
+
+            li{
+              border-bottom: 1px solid $colorGray2;
+              padding: 15px 0 0  0 ;
+            }
+        }
         &:before {
           content: "";
 
@@ -89,11 +113,11 @@ $color: "";
       }
     }
     .photos {
-      // position: relative;
-      // background: $colorBlack2;
+  
       width: 100%;
       &:hover .photos-submenu{
         display: grid;
+        // top: 0;
       }
       .photos-submenu {
         display: grid;
@@ -104,7 +128,27 @@ $color: "";
          top: -3px;
          height:229px;
          display: none;
-         border-left: 1px solid $colorWhite;
+         border-left: 1px solid $colorGray1;
+
+
+      @media screen and (max-width: 1008px){ 
+        grid-template-columns: 1fr ;
+        left: 0;
+        width: 100%;
+        padding: 0 10px 20px  40px;
+        top: 30px;
+        display: none;
+        background: $colorBlack2;
+        height: max-content;
+
+        li{
+          border-bottom: 1px solid $colorGray2;
+          padding: 15px 0 0  0 ;
+        }
+
+     }
+   
+
         li{
            display: flex;
         }
@@ -113,3 +157,9 @@ $color: "";
     }
   }
 }
+
+// *****************
+ .show-categories{
+   display: block!important;
+ }
+
